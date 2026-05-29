@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "title": "JEPX-EPF-Benchmark: Probabilistic 48-Step Electricity Price Forecasting Dataset and Code for the Japan Electric Power Exchange (Tokyo and Kansai, 2022-2023)",
+    "creators": [
+      {
+        "name": "Sriboriboon, Panithan",
+        "affiliation": "School of Physics, Institute of Science, Suranaree University of Technology"
+      },
+      {
+        "name": "Fongkaew, Ittipon",
+        "affiliation": "School of Physics, Institute of Science, Suranaree University of Technology",
+        "orcid": "<to-be-supplied>"
+      }
+    ],
+    "upload_type": "dataset",
+    "publication_type": "article",
+    "description": "Reproducibility package for the manuscript 'A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange: Conformal, Distributional, and Quantile-Averaging Methods Across Day-Ahead and Imbalance Markets', submitted to Applied Energy. Contains: (i) the processed JEPX 30-min half-hourly dataset for Tokyo and Kansai areas (day-ahead and imbalance prices, plus weather, gas-JPY, USD-JPY, and area-system price exogenous regressors) covering 2022-03-01 to 2023-12-31; (ii) the full Python rolling-window benchmarking pipeline implementing the LEAR baseline (Lago 2021), DDNN-Normal and DDNN-Johnson-SU distributional neural networks (Marcjasz 2023), an N-HiTS hierarchical neural forecaster (Olivares 2023), rolling-window Quantile Regression Averaging (Uniejewski-Weron 2021), and adaptive conformal prediction (Gibbs-Candes 2021); (iii) the per-issuance prediction matrices for all six rolling models on each of four (area, market) pairs (~14,640 issuance times x 48 horizons each); (iv) the Hansen-Lunde-Nason Model Confidence Set implementation with stationary-bootstrap critical values; and (v) all figure-generation scripts. The pipeline is reproducible on commodity hardware (Apple M2, 16 GB RAM) in approximately 80 minutes total wall-clock time. All code is in Python 3.8+ with dependencies lightgbm, xgboost, torch, scikit-learn, statsmodels, pandas, numpy, matplotlib.",
+    "keywords": [
+      "electricity price forecasting",
+      "Japan Electric Power Exchange",
+      "JEPX",
+      "probabilistic forecasting",
+      "LEAR",
+      "distributional neural networks",
+      "N-HiTS",
+      "quantile regression averaging",
+      "conformal prediction",
+      "Diebold-Mariano",
+      "Model Confidence Set",
+      "day-ahead market",
+      "imbalance market",
+      "Tokyo",
+      "Kansai",
+      "renewable energy",
+      "open-access benchmark",
+      "reproducible research"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "language": "eng",
+    "communities": [
+      {"identifier": "energy"}
+    ],
+    "subjects": [
+      {"term": "Electricity price forecasting", "identifier": "https://id.loc.gov/authorities/subjects/sh85042147", "scheme": "url"},
+      {"term": "Japan electricity market"},
+      {"term": "Probabilistic machine learning"}
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "<to-be-filled-with-paper-DOI-on-acceptance>",
+        "relation": "isSupplementTo",
+        "scheme": "doi",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1016/j.apenergy.2021.116983",
+        "relation": "cites",
+        "scheme": "doi",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1016/j.eneco.2023.106843",
+        "relation": "cites",
+        "scheme": "doi",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "1.0.0",
+    "notes": "If you use this dataset or pipeline, please cite both the Zenodo record and the underlying Applied Energy paper (DOI to be added on acceptance). The JEPX raw price feed is publicly available from the JEPX information disclosure portal (https://www.jepx.jp/en/) and the area transmission system operators; the processed CSV files in this archive add column harmonisation, datetime parsing, and aligned weather/fuel covariates. By depositing this archive we follow Applied Energy's open-data policy. We thank the JEPX information disclosure team and the area TSOs for the public data feed."
+  }
+}

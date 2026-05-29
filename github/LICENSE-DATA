@@ -1,0 +1,33 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The processed dataset files in `dataset/`, the per-issuance prediction
+matrices in `results/`, the figures in `figures/`, and any other data
+artefacts in this repository are licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0).
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+            even commercially
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+                  license, and indicate if changes were made. You may do
+                  so in any reasonable manner, but not in any way that
+                  suggests the licensor endorses you or your use.
+
+  - No additional restrictions — You may not apply legal terms or
+                                  technological measures that legally
+                                  restrict others from doing anything
+                                  the license permits.
+
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution:
+  Sriboriboon, P. & Fongkaew, I. (2026). JEPX-EPF-Benchmark v1.0.0.
+  https://doi.org/<to-be-supplied-on-Zenodo-deposit>
+
+Raw JEPX prices included in the processed dataset originate from the JEPX
+information disclosure portal (https://www.jepx.jp/en/) and the area
+transmission system operators. Redistribution of derived/processed forms is
+permitted under the JEPX disclosure terms.

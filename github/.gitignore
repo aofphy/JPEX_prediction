@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+.env
+
+# LaTeX byproducts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.spl
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Results are reproducible from code; do not version-control large outputs by default.
+# Uncomment to exclude:
+# results/
+# results/*.csv
+# results/*.npz

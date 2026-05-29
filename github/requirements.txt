@@ -1,0 +1,9 @@
+lightgbm>=3.3
+xgboost>=1.7
+torch>=2.0
+scikit-learn>=1.0
+statsmodels>=0.14
+pandas>=1.5
+numpy>=1.21
+matplotlib>=3.5
+scipy>=1.10

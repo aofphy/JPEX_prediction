@@ -1,0 +1,368 @@
+{
+  "TK_DA": {
+    "default_T^(1/3)": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "LEAR",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.0
+        ],
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-JSU",
+          0.001
+        ]
+      ]
+    },
+    "weekly_336": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "LEAR",
+          0.001
+        ],
+        [
+          "QRA-Q50",
+          0.011
+        ],
+        [
+          "WeeklyNaive",
+          0.009
+        ],
+        [
+          "DDNN-JSU",
+          0.069
+        ]
+      ]
+    },
+    "biweekly_672": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "LEAR",
+          0.011
+        ],
+        [
+          "QRA-Q50",
+          0.023
+        ],
+        [
+          "WeeklyNaive",
+          0.017
+        ],
+        [
+          "DDNN-JSU",
+          0.092
+        ]
+      ]
+    }
+  },
+  "TK_IM": {
+    "default_T^(1/3)": {
+      "mcs_10": [
+        "LEAR"
+      ],
+      "mcs_25": [
+        "LEAR"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.0
+        ],
+        [
+          "DDNN-JSU",
+          0.001
+        ]
+      ]
+    },
+    "weekly_336": {
+      "mcs_10": [
+        "LEAR"
+      ],
+      "mcs_25": [
+        "LEAR"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.003
+        ],
+        [
+          "QRA-Q50",
+          0.035
+        ],
+        [
+          "DDNN-JSU",
+          0.017
+        ]
+      ]
+    },
+    "biweekly_672": {
+      "mcs_10": [
+        "LEAR"
+      ],
+      "mcs_25": [
+        "LEAR"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.006
+        ],
+        [
+          "QRA-Q50",
+          0.024
+        ],
+        [
+          "DDNN-JSU",
+          0.013
+        ]
+      ]
+    }
+  },
+  "KS_DA": {
+    "default_T^(1/3)": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-JSU",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.0
+        ],
+        [
+          "LEAR",
+          0.0
+        ]
+      ]
+    },
+    "weekly_336": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-JSU",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.015
+        ],
+        [
+          "LEAR",
+          0.009
+        ]
+      ]
+    },
+    "biweekly_672": {
+      "mcs_10": [
+        "N-HiTS"
+      ],
+      "mcs_25": [
+        "N-HiTS"
+      ],
+      "eliminations": [
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "WeeklyNaive",
+          0.001
+        ],
+        [
+          "DDNN-JSU",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.042
+        ],
+        [
+          "LEAR",
+          0.018
+        ]
+      ]
+    }
+  },
+  "KS_IM": {
+    "default_T^(1/3)": {
+      "mcs_10": [
+        "LEAR"
+      ],
+      "mcs_25": [
+        "LEAR"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.0
+        ],
+        [
+          "DDNN-JSU",
+          0.0
+        ],
+        [
+          "QRA-Q50",
+          0.0
+        ]
+      ]
+    },
+    "weekly_336": {
+      "mcs_10": [
+        "LEAR"
+      ],
+      "mcs_25": [
+        "LEAR"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.007
+        ],
+        [
+          "DDNN-JSU",
+          0.005
+        ],
+        [
+          "QRA-Q50",
+          0.07
+        ]
+      ]
+    },
+    "biweekly_672": {
+      "mcs_10": [
+        "LEAR",
+        "QRA-Q50"
+      ],
+      "mcs_25": [
+        "LEAR",
+        "QRA-Q50"
+      ],
+      "eliminations": [
+        [
+          "WeeklyNaive",
+          0.0
+        ],
+        [
+          "DDNN-Normal",
+          0.0
+        ],
+        [
+          "N-HiTS",
+          0.036
+        ],
+        [
+          "DDNN-JSU",
+          0.019
+        ]
+      ]
+    }
+  }
+}

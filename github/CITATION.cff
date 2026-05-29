@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: "JEPX-EPF-Benchmark: Probabilistic 48-Step Electricity Price Forecasting Dataset and Code for the Japan Electric Power Exchange"
+message: "If you use this software or dataset, please cite both the Applied Energy paper (preferred-citation) and this repository / Zenodo deposit."
+type: software
+authors:
+  - given-names: Panithan
+    family-names: Sriboriboon
+    affiliation: "School of Physics, Institute of Science, Suranaree University of Technology"
+  - given-names: Ittipon
+    family-names: Fongkaew
+    email: ittipon@sut.ac.th
+    affiliation: "School of Physics, Institute of Science, Suranaree University of Technology"
+repository-code: "https://github.com/<your-org>/jepx-epf-benchmark"
+url: "https://github.com/<your-org>/jepx-epf-benchmark"
+abstract: "Reproducibility package for a probabilistic 48-step electricity price forecasting benchmark on the Japan Electric Power Exchange (JEPX). Includes processed 30-min half-hourly price data for Tokyo and Kansai areas (2022-2023), Python pipeline implementing LEAR, DDNN-Normal, DDNN-Johnson-SU, N-HiTS, rolling Quantile Regression Averaging, and adaptive conformal prediction under the Lago 2021 rolling-window protocol, plus Diebold-Mariano and Hansen-Lunde-Nason Model Confidence Set statistical testing."
+keywords:
+  - electricity price forecasting
+  - JEPX
+  - probabilistic forecasting
+  - LEAR
+  - distributional neural networks
+  - N-HiTS
+  - quantile regression averaging
+  - conformal prediction
+  - Diebold-Mariano test
+  - Model Confidence Set
+  - Japan
+  - renewable energy
+license: MIT
+version: 1.0.0
+date-released: "2026-05-28"
+preferred-citation:
+  type: article
+  authors:
+    - given-names: Panithan
+      family-names: Sriboriboon
+      affiliation: "Suranaree University of Technology"
+    - given-names: Ittipon
+      family-names: Fongkaew
+      email: ittipon@sut.ac.th
+      affiliation: "Suranaree University of Technology"
+  title: "A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange"
+  journal: "Applied Energy"
+  year: 2026
+  doi: "<to-be-supplied-on-acceptance>"

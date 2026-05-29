@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\signature{Ittipon Fongkaew \\ Corresponding author}
+\address{School of Physics, Institute of Science \\ Suranaree University of Technology \\ 111 University Avenue \\ Nakhon Ratchasima 30000, Thailand \\ \texttt{ittipon@sut.ac.th}}
+\begin{document}
+
+\begin{letter}{Editor-in-Chief \\ \emph{Applied Energy} \\ Elsevier}
+
+\opening{Dear Editor,}
+
+We are pleased to submit the manuscript \emph{``A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange: Conformal, Distributional, and Quantile-Averaging Methods Across Day-Ahead and Imbalance Markets''} for consideration as a research article in \emph{Applied Energy}.
+
+The work presents the first systematic probabilistic electricity-price-forecasting (EPF) benchmark on the Japan Electric Power Exchange (JEPX) that meets the methodological standard of the Lago, Marcjasz, De Schutter \& Weron (2021) open-access European benchmark published in this journal. We use a 365-day sliding training window with weekly recalibration to evaluate seven forecasters --- weekly-naive, LEAR, DDNN-Normal, DDNN-Johnson-SU, N-HiTS, QRA-rolling, and LEAR-plus-adaptive-conformal --- across two areas (Tokyo, Kansai) and two markets (day-ahead, imbalance) for a 305-day held-out test period (2023-03 to 2023-12, 14{,}640 issuance times \(\times\) 48 horizons per area-market pair).
+
+The manuscript makes four contributions that we believe are of interest to the \emph{Applied Energy} readership:
+\begin{enumerate}
+\item \textbf{The first probabilistic Lago-protocol-compliant EPF benchmark on JEPX.} We close the methodological gap between the European EPF benchmark literature and Asian-market practice by porting the Lago 2021 rolling-window protocol to JEPX 30-min half-hourly data, extending it to a 48-step multi-output target, and adding distributional, ensembled, and conformally-calibrated probabilistic forecasters from the post-2020 EPF research frontier.
+\item \textbf{A cross-market reversal of the optimal single model.} The Hansen-Lunde-Nason \emph{Model Confidence Set} at \(\alpha = 0.10\) contains exactly one model in each of the four (area, market) pairs: N-HiTS on both DA markets, LEAR on both IM markets. To our knowledge this is the first published instance of such a clean cross-market identification in EPF. The pattern is robust across areas (Tokyo and Kansai) and is directly actionable for JEPX market participants.
+\item \textbf{A QRA-rolling ensemble that dominates on every metric.} Combining LEAR and DDNN-Normal as base learners with a 90-day rolling calibration and weekly refit, the QRA-rolling ensemble is the best point forecaster (rRMSE 0.75--0.84 across all four pairs) and the best probabilistic forecaster (CRPS 1.23--1.95; empirical coverage within 1 percentage point of nominal 90\% on three of four pairs). The 90-day rolling-calibration choice is itself a methodological recommendation: a single fixed 30-day calibration window under-covers the 90\% interval by 11--20 percentage points.
+\item \textbf{An honest finding that the seasonal-naive baseline is exceptionally strong on JEPX-Tokyo DA.} Even rigorously rolling LEAR is 14.6\% worse than the weekly-naive baseline on this market --- an unusual pattern with respect to the European EPF literature. We attribute it to the unusual fidelity of the Tokyo duck-curve weekly repetition driven by industrial demand combined with high photovoltaic penetration, and we expect this finding to motivate market-structure work on JEPX.
+\end{enumerate}
+
+The earlier preprint of this work \citep*[on which the present manuscript is based but which it supersedes;][]{sriboriboon_v1e} contained a non-reproducible exponential-growth trading back-test that, on subsequent investigation by the present authors, traced to a look-ahead bias. The present manuscript explicitly retracts that result and replaces it with the transparent rolling-protocol evaluation described above. We mention this here in the interest of full disclosure; the v1e preprint is cited in the manuscript text and reference list.
+
+To our knowledge no prior peer-reviewed study has provided this combination of (i) a JEPX-specific multi-area benchmark, (ii) Lago-protocol-compliant rolling-window recalibration, (iii) probabilistic forecasts with full CRPS / Winkler / coverage / MCS evaluation, and (iv) a public reproducibility package. We believe these elements together provide actionable methodological guidance to both EPF researchers and Japanese-market practitioners.
+
+The work has not been published previously and is not under consideration elsewhere. All authors have approved the submission. We declare no competing interests.
+
+We suggest the following potential reviewers, none of whom have collaborated with us in the past three years:
+\begin{itemize}
+\item Prof.\ Rafa\l{} Weron, Wroc\l{}aw University of Science and Technology (\texttt{rafal.weron@pwr.edu.pl}) --- author of the seminal EPF reviews and the Lago 2021 benchmark.
+\item Dr.\ Jesus Lago, KU Leuven (\texttt{jesus.lago@kuleuven.be}) --- lead author of the Lago 2021 benchmark whose protocol we adopt.
+\item Dr.\ Grzegorz Marcjasz, Wroc\l{}aw University of Science and Technology --- co-author of the DDNN paper that forms a methodological backbone of this work.
+\item Prof.\ Tao Hong, University of North Carolina at Charlotte (\texttt{hongtao01@uncc.edu}) --- editor-in-chief of the IJF GEFCom competitions, broad EPF expertise.
+\end{itemize}
+
+Thank you for considering our submission. We look forward to your response and welcome any questions about the technical methodology or the reproducibility package.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

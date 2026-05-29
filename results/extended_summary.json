@@ -1,0 +1,210 @@
+{
+  "TK_DA": {
+    "WeeklyNaive": {
+      "rRMSE": 1.0
+    },
+    "LEAR": {
+      "rRMSE": NaN
+    },
+    "DDNN-Normal": {
+      "rRMSE": NaN,
+      "CRPS": 2.4659460047770274,
+      "coverage_90": 0.966450364298725,
+      "winkler_90": 22.460449812206463
+    },
+    "DDNN-JSU": {
+      "rRMSE": NaN,
+      "CRPS": 1.6070182997320468,
+      "coverage_90": 0.9135900500910746,
+      "winkler_90": 15.579911238406947
+    },
+    "N-HiTS": {
+      "rRMSE": 1.0457909785291828
+    },
+    "PatchTST": {
+      "rRMSE": 1.0303884531077436
+    },
+    "iTransformer": {
+      "rRMSE": 0.7365441589081394
+    },
+    "Chronos": {
+      "rRMSE": 0.7480002163885976,
+      "CRPS": 1.1223627882950413,
+      "coverage_90": 0.8374117714025501,
+      "winkler_90": 12.678647503188744
+    },
+    "TimesFM": {
+      "rRMSE": 9.181782149328255,
+      "CRPS": 10.394117029621773,
+      "coverage_90": 0.8369677823315118,
+      "winkler_90": 136.7248345232613
+    },
+    "QRA-rolling": {
+      "rRMSE": NaN,
+      "CRPS": 1.2285792923028322,
+      "coverage_90": 0.8972666343669251,
+      "winkler_90": 14.032897733465196
+    },
+    "LEAR+cf": {
+      "CRPS": NaN,
+      "coverage_90": NaN,
+      "winkler_90": NaN
+    }
+  },
+  "TK_IM": {
+    "WeeklyNaive": {
+      "rRMSE": 1.0
+    },
+    "LEAR": {
+      "rRMSE": NaN
+    },
+    "DDNN-Normal": {
+      "rRMSE": NaN,
+      "CRPS": 3.0024182948066955,
+      "coverage_90": 0.9499445013661202,
+      "winkler_90": 28.604197013077336
+    },
+    "DDNN-JSU": {
+      "rRMSE": NaN,
+      "CRPS": 2.171481055822675,
+      "coverage_90": 0.9236054189435337,
+      "winkler_90": 23.5521624989323
+    },
+    "N-HiTS": {
+      "rRMSE": 0.8612580814644429
+    },
+    "PatchTST": {
+      "rRMSE": 0.8088557354645073
+    },
+    "iTransformer": {
+      "rRMSE": 0.7555117751480529
+    },
+    "Chronos": {
+      "rRMSE": 0.7474394577583482,
+      "CRPS": 1.954871590677082,
+      "coverage_90": 0.8574567395264117,
+      "winkler_90": 22.864947977212545
+    },
+    "TimesFM": {
+      "rRMSE": 5.303728697368559,
+      "CRPS": 10.551550524777758,
+      "coverage_90": 0.9163720969945355,
+      "winkler_90": 124.11360308772204
+    },
+    "QRA-rolling": {
+      "rRMSE": NaN,
+      "CRPS": 1.9471621905918595,
+      "coverage_90": 0.9179263565891473,
+      "winkler_90": 23.105457443564898
+    },
+    "LEAR+cf": {
+      "CRPS": NaN,
+      "coverage_90": NaN,
+      "winkler_90": NaN
+    }
+  },
+  "KS_DA": {
+    "WeeklyNaive": {
+      "rRMSE": 1.0
+    },
+    "LEAR": {
+      "rRMSE": NaN
+    },
+    "DDNN-Normal": {
+      "rRMSE": NaN,
+      "CRPS": 2.876257577753589,
+      "coverage_90": 0.9394310678506376,
+      "winkler_90": 22.729179926314277
+    },
+    "DDNN-JSU": {
+      "rRMSE": NaN,
+      "CRPS": 1.9079654012482914,
+      "coverage_90": 0.9227444785974499,
+      "winkler_90": 17.749487732471106
+    },
+    "N-HiTS": {
+      "rRMSE": 0.8978152569041277
+    },
+    "PatchTST": {
+      "rRMSE": 1.1158737530866982
+    },
+    "iTransformer": {
+      "rRMSE": 0.7234733722393041
+    },
+    "Chronos": {
+      "rRMSE": 0.732399662296744,
+      "CRPS": 1.3385228141536056,
+      "coverage_90": 0.8458931010928962,
+      "winkler_90": 14.727978053348844
+    },
+    "TimesFM": {
+      "rRMSE": 9.685909491571724,
+      "CRPS": 13.693185526057688,
+      "coverage_90": 0.8275187841530055,
+      "winkler_90": 175.7025588370107
+    },
+    "QRA-rolling": {
+      "rRMSE": NaN,
+      "CRPS": 1.591613968527205,
+      "coverage_90": 0.8935339954780361,
+      "winkler_90": 16.169958954356805
+    },
+    "LEAR+cf": {
+      "CRPS": NaN,
+      "coverage_90": NaN,
+      "winkler_90": NaN
+    }
+  },
+  "KS_IM": {
+    "WeeklyNaive": {
+      "rRMSE": 1.0
+    },
+    "LEAR": {
+      "rRMSE": NaN
+    },
+    "DDNN-Normal": {
+      "rRMSE": NaN,
+      "CRPS": 3.0105413554981215,
+      "coverage_90": 0.9333148337887067,
+      "winkler_90": 24.89749953536148
+    },
+    "DDNN-JSU": {
+      "rRMSE": NaN,
+      "CRPS": 2.1485506432792674,
+      "coverage_90": 0.9105461634790528,
+      "winkler_90": 20.593221582605224
+    },
+    "N-HiTS": {
+      "rRMSE": 0.8728469989729758
+    },
+    "PatchTST": {
+      "rRMSE": 0.8805001547283027
+    },
+    "iTransformer": {
+      "rRMSE": 0.7514457235270737
+    },
+    "Chronos": {
+      "rRMSE": 0.7465161917967291,
+      "CRPS": 1.8189931525832073,
+      "coverage_90": 0.8591316598360655,
+      "winkler_90": 19.745224670588918
+    },
+    "TimesFM": {
+      "rRMSE": 6.545436950945502,
+      "CRPS": 11.739177240621041,
+      "coverage_90": 0.8958532559198543,
+      "winkler_90": 138.398377425678
+    },
+    "QRA-rolling": {
+      "rRMSE": NaN,
+      "CRPS": 1.9081571320808108,
+      "coverage_90": 0.8925912467700259,
+      "winkler_90": 20.329338138294684
+    },
+    "LEAR+cf": {
+      "CRPS": NaN,
+      "coverage_90": NaN,
+      "winkler_90": NaN
+    }
+  }
+}
