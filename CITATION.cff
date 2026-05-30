@@ -39,7 +39,7 @@ preferred-citation:
       family-names: Fongkaew
       email: ittipon@sut.ac.th
       affiliation: "Suranaree University of Technology"
-  title: "A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange"
+  title: "Foundation Models Match Supervised Forecasters on the Japan Electric Power Exchange: A Probabilistic 48-Step Benchmark Across Day-Ahead and Imbalance Markets"
   journal: "Applied Energy"
   year: 2026
   doi: "<to-be-supplied-on-acceptance>"
