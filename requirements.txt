@@ -1,0 +1,23 @@
+# Core dependencies for the JEPX EPF benchmark pipeline
+# Tested on Python 3.10, Apple M2 (MPS) and Linux x86_64 (CPU/CUDA).
+
+# Numerics & data
+numpy>=1.24,<3
+pandas>=1.5
+scipy>=1.10
+scikit-learn>=1.1
+
+# Deep forecasters (N-HiTS, DDNN, PatchTST, iTransformer)
+torch>=2.0
+
+# Classical baseline + statistical tests (LEAR, DM-HAC, MCS bootstrap)
+statsmodels>=0.14
+
+# Zero-shot foundation forecasters
+chronos-forecasting>=2.0     # amazon/chronos-bolt-small  (https://github.com/amazon-science/chronos-forecasting)
+timesfm>=1.3                  # google/timesfm-1.0-200m-pytorch
+transformers>=4.41,<5         # required by chronos
+huggingface-hub>=0.34,<1.0    # pin to chronos-compatible range
+
+# Figures
+matplotlib>=3.5

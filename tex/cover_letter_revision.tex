@@ -1,0 +1,37 @@
+\documentclass[11pt,a4paper]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\signature{Ittipon Fongkaew \\ Corresponding author}
+\address{School of Physics, Institute of Science \\ Suranaree University of Technology \\ 111 University Avenue \\ Nakhon Ratchasima 30000, Thailand \\ \texttt{ittipon@sut.ac.th}}
+\begin{document}
+
+\begin{letter}{Editor-in-Chief \\ \emph{Applied Energy} \\ Elsevier}
+
+\opening{Dear Editor,}
+
+We are pleased to resubmit, as a revised manuscript, our paper \emph{``A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange: Conformal, Distributional, and Quantile-Averaging Methods Across Day-Ahead and Imbalance Markets''} for consideration as a research article in \emph{Applied Energy}. A detailed point-by-point response to each reviewer comment is attached as the document \texttt{RESPONSE\_TO\_REVIEWERS.pdf}.
+
+The revision addresses all critical, major, and minor concerns raised in the first-round Editorial Decision Letter. Beyond those items, in response to reviewer interest in modern and zero-shot forecasting architectures we have substantially expanded the model set under the same Lago-protocol rolling-window evaluation. The revised manuscript benchmarks ten forecasters instead of the original six: the original LEAR, DDNN-Normal, DDNN-Johnson-SU, N-HiTS, QRA-rolling, and LEAR-plus-adaptive-conformal pipeline; plus the modern Transformer architectures PatchTST and iTransformer trained from scratch; plus the two pretrained zero-shot foundation forecasters Chronos-Bolt-small and TimesFM-1.0-200M. The MCS, block-length-sensitivity, point-accuracy, and probabilistic-accuracy results have all been re-run on the expanded model set.
+
+The headline of the revised paper has substantially changed as a result. We summarise the new contributions below:
+
+\begin{enumerate}
+\item \textbf{The pretrained zero-shot foundation model Chronos-Bolt-small, evaluated with frozen weights and no JEPX-specific fine-tuning, is in the Hansen-Lunde-Nason Model Confidence Set on every (area, market) pair} at both \(\alpha = 0.10\) and \(\alpha = 0.25\), and is the sole MCS singleton on Tokyo IM. The result is robust to all three stationary-bootstrap mean block lengths we tested (24, 336 weekly, 672 biweekly half-hours). This is, to our knowledge, the first published instance of a zero-shot foundation forecaster statistically matching the strongest supervised method on a major spot electricity market.
+\item \textbf{The modern Transformer architecture iTransformer substantially outperforms the Lago-tradition supervised models} (LEAR, DDNN-Normal, DDNN-Johnson-SU, N-HiTS) on every (area, market) pair, with rRMSE 0.72--0.76 versus 0.77--1.21. iTransformer is in the MCS on three of four pairs alongside Chronos-Bolt; the original supervised winners (N-HiTS on DA, LEAR on IM) are eliminated from the MCS once the new candidates enter the set.
+\item \textbf{Foundation-model success on JEPX is not generic.} The second pretrained zero-shot foundation model we evaluated, TimesFM-1.0-200M, performs poorly even after physical-range clipping of its outputs (rRMSE 5--10 across cells), driven by occasional extreme tokenization outliers in its autoregressive decoder. We document this failure mode in the manuscript as a methodological caution for the EPF community.
+\item \textbf{The original Lago-tradition supervised-only 2$\times$2 cross-market identification (N-HiTS on DA, LEAR on IM)} is preserved in the manuscript as a sub-finding, with the explicit observation that it characterises the restricted Lago-tradition candidate set but does not survive when modern Transformer or foundation-model candidates are added.
+\item \textbf{All numerical inconsistencies flagged by the Editor and the Devil's Advocate reviewer have been corrected,} including the §1 / Table 4 contradiction on the Tokyo DA MCS finding, the missing values in Table 1, the implicit Winkler-claim reversal in the original Abstract, the DM-HAC lag selection, the CRPS-comparability across closed-form and empirical-CDF estimators, the conformal calibration-vs-scoring window separation, and the orphan dependency declarations.
+\end{enumerate}
+
+The four originally-flagged critical issues have all been resolved. We have also added (i) a Highlights file, (ii) an Ethics statement, (iii) the necessary citations for the new model architectures, (iv) a methodological note in the Discussion on look-ahead bias in P\&L back-tests (foregrounding the v1e preprint retraction that was disclosed in the original cover letter), and (v) an updated Data and Code Availability statement reflecting the expanded reproducibility package.
+
+We have re-verified every numerical value in the revised manuscript against the released metric files, and the manuscript is fully reproducible from the released code and per-issuance prediction matrices. The reproducibility package is at the redacted-author GitHub mirror and on a reserved Zenodo deposit, both of which will be finalised on acceptance.
+
+We believe the revised manuscript represents a substantially stronger contribution than the original submission, and that the Chronos-Bolt zero-shot result in particular is of broad interest to the \emph{Applied Energy} readership working on spot-market forecasting and on the recent foundation-model wave.
+
+Thank you for handling this revised submission. We look forward to your response.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
