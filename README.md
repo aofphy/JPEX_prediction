@@ -1,42 +1,30 @@
-# JEPX EPF Benchmark — Reproducibility Package
+# JEPX Electricity-Price Forecasting Benchmark
 
-This repository accompanies the manuscript
+A reproducible probabilistic forecasting benchmark for the **Japan Electric Power Exchange (JEPX)**, covering Tokyo and Kansai areas across day-ahead and imbalance markets at 30-minute resolution.
 
-> **A Probabilistic 48-Step Forecasting Benchmark for the Japan Electric Power Exchange: Conformal, Distributional, and Quantile-Averaging Methods Across Day-Ahead and Imbalance Markets**
-> Panithan Sriboriboon, Ittipon Fongkaew (corresponding author).
-> Submitted to *Applied Energy*.
+The benchmark follows the rolling-window protocol of Lago et al. (2021) and compares ten 48-step forecasters, including classical regression, distributional neural networks, modern Transformer architectures, and pretrained zero-shot foundation models.
 
-It contains the full Python pipeline, processed dataset references, per-issuance prediction metrics, and the LaTeX source of the manuscript. The large per-issuance prediction matrices (`.npz`, ~600 MB total) are deposited on Zenodo per the manuscript's Data Availability statement; the JSON metric summaries and predicted medians are included in this repo for full result verification.
+---
 
-## What's in the benchmark
+## Headline result
 
-A Lago-protocol-compliant rolling-window evaluation of ten 48-step forecasters across four (area, market) pairs of JEPX (Tokyo + Kansai x Day-Ahead + Imbalance):
+A pretrained zero-shot foundation model (Chronos-Bolt) is statistically tied with the strongest supervised method (iTransformer) across every (area, market) pair, and is the sole singleton of the Hansen-Lunde-Nason Model Confidence Set on Tokyo imbalance, at zero training cost.
 
-| Model | Family | Source |
-|---|---|---|
-| WeeklyNaive | seasonal baseline | -- |
-| LEAR | LASSO-LARS regression | Lago et al. 2021 |
-| DDNN-Normal | distributional NN, Gaussian head | Marcjasz et al. 2023 |
-| DDNN-JSU | distributional NN, Johnson-SU head | Marcjasz et al. 2023 |
-| N-HiTS | hierarchical multi-rate decomposition | Olivares et al. 2023 |
-| **PatchTST** | patching Transformer | Nie et al. 2023 |
-| **iTransformer** | variate-inverted Transformer | Liu et al. 2024 |
-| **Chronos-Bolt** | pretrained foundation model (zero-shot) | Ansari et al. 2024 |
-| **TimesFM** | pretrained foundation model (zero-shot) | Das et al. 2024 |
-| QRA-rolling | ensemble of LEAR + DDNN-N (Q regression) | Uniejewski & Weron 2021 |
+## Models
 
-Models in **bold** are new in this version of the benchmark. The headline result is that the pretrained zero-shot foundation model Chronos-Bolt is in the Hansen-Lunde-Nason Model Confidence Set (alpha in {0.10, 0.25}) on every (area, market) pair and is the sole MCS singleton on Tokyo IM, statistically tying with the strongest supervised method (iTransformer).
+| Model | Family |
+|---|---|
+| WeeklyNaive | seasonal baseline |
+| LEAR | LASSO-LARS regression |
+| DDNN-Normal / DDNN-JSU | distributional neural networks |
+| N-HiTS | hierarchical multi-rate decomposition |
+| PatchTST | patching Transformer |
+| iTransformer | variate-inverted Transformer |
+| Chronos-Bolt | pretrained foundation model (zero-shot) |
+| TimesFM | pretrained foundation model (zero-shot) |
+| QRA-rolling | quantile regression averaging ensemble |
 
-## Reproducing the benchmark
-
-### Prerequisites
-
-- Python 3.10
-- ~16 GB RAM
-- Apple Silicon (MPS) or NVIDIA GPU recommended; CPU-only works but is slower
-- ~5 GB free disk (model weights + intermediate predictions)
-
-### Install
+## Install
 
 ```bash
 git clone https://github.com/aofphy/JPEX_prediction.git
@@ -45,74 +33,49 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Notes:
-- `chronos-forecasting` and `timesfm` will download ~1 GB of pretrained weights on first invocation
-- On macOS with conflicting TF/numpy installs, set `USE_TF=0 TRANSFORMERS_NO_TF=1` before invoking the foundation-model runners (the zero-shot runners do this automatically via `os.environ.setdefault`)
+Requires Python 3.10+. Apple Silicon (MPS) or NVIDIA GPU recommended; CPU also works. The two foundation models will download approximately 1 GB of pretrained weights on first invocation.
 
-### Data
+## Run
 
-The processed half-hourly JEPX dataset (Tokyo + Kansai DA + IM, 2022-03 to 2023-12) lives in `results/` as `IM_DA_TK_ALL.csv` and `IM_DA_KS_ALL.csv` once the Zenodo deposit is downloaded. The raw JEPX prices are publicly available at `jepx.jp`.
-
-### Run
+The processed half-hourly JEPX dataset (Tokyo + Kansai, day-ahead + imbalance, 2022-03 to 2023-12) is hosted on Zenodo. The raw prices are publicly available at [jepx.jp](https://www.jepx.jp).
 
 ```bash
 cd code
-python run_lear_rolling.py              # LEAR baseline             ~10 min
-python run_ddnn_rolling.py              # DDNN-Normal               ~15 min on MPS
-python run_ddnn_jsu_rolling.py          # DDNN-JSU                  ~15 min on MPS
-python run_nhits_rolling.py             # N-HiTS                    ~20 min on MPS
-python run_patchtst_rolling.py          # PatchTST                  ~25 min on MPS
-python run_itransformer_rolling.py      # iTransformer              ~10 min on MPS
-python run_chronos_zeroshot.py          # Chronos-Bolt (zero-shot)  ~5 min on MPS
-python run_timesfm_zeroshot.py          # TimesFM (zero-shot)       ~7 min on CPU
-python fix_timesfm_clip.py              # physical-range clipping for TimesFM
-python run_qra_rolling.py               # QRA-rolling ensemble      variable
-python run_conformal_lear.py            # LEAR + adaptive conformal
-python run_mcs_extended.py              # Hansen-Lunde-Nason MCS    ~5 min
-python make_extended_summary.py         # Aggregate Tables 2-5      < 1 min
+python run_lear_rolling.py
+python run_ddnn_rolling.py
+python run_ddnn_jsu_rolling.py
+python run_nhits_rolling.py
+python run_patchtst_rolling.py
+python run_itransformer_rolling.py
+python run_chronos_zeroshot.py
+python run_timesfm_zeroshot.py
+python fix_timesfm_clip.py
+python run_qra_rolling.py
+python run_conformal_lear.py
+python run_mcs_extended.py
+python make_extended_summary.py
 ```
 
-Total wall-clock on commodity Apple M2 hardware: ~2 hours.
+Total wall-clock on commodity Apple M2 hardware is approximately two hours.
 
 ## Repository layout
 
 ```
-.
-|-- code/                       # All Python pipeline (22 files)
-|   |-- data_loader.py          # JEPX CSV loader
-|   |-- feature_build.py        # Lookback + target construction
-|   |-- rolling_eval.py         # Lago rolling-window evaluator
-|   |-- mcs.py                  # Hansen-Lunde-Nason Model Confidence Set
-|   |-- metrics_prob.py         # RMSE, MAE, CRPS, pinball, Winkler, coverage
-|   |-- models_*.py             # Per-model implementations
-|   |-- run_*_rolling.py        # Rolling-window runners (supervised)
-|   |-- run_*_zeroshot.py       # Zero-shot runners (foundation models)
-|   `-- make_extended_summary.py
-|-- tex/                        # LaTeX manuscript
-|   |-- main.tex                # Manuscript
-|   |-- main.pdf                # Built PDF
-|   |-- references.bib          # Bibliography
-|   |-- cover_letter.tex        # Cover letter
-|   `-- RESPONSE_TO_REVIEWERS.md
-|-- results/                    # Metrics JSONs + summary CSVs
-|-- figures/                    # PDF/PNG figures used in the manuscript
-|-- github/                     # GitHub Actions workflow + community files
-|-- zenodo/                     # Zenodo deposit metadata
-|-- CITATION.cff                # GitHub Citation File Format
-|-- LICENSE                     # MIT (code)
-|-- LICENSE-DATA                # CC-BY-4.0 (processed dataset)
-`-- requirements.txt
+code/        Python pipeline (rolling-window evaluator, model implementations, MCS, metrics)
+results/    Per-model JSON metric files and aggregated summary tables
+figures/    Publication figures
+tex/        LaTeX source of the accompanying manuscript
 ```
 
-## Citing
+## Citation
 
-If you use this benchmark, please cite both the manuscript (see `CITATION.cff`) and the Zenodo deposit (DOI to be supplied on acceptance).
+If you use this benchmark or the released prediction matrices in your work, please cite the manuscript and the Zenodo deposit. See [`CITATION.cff`](CITATION.cff) for the GitHub Citation File Format entry.
 
 ## License
 
-- **Code**: MIT (see `LICENSE`)
-- **Processed dataset**: CC-BY-4.0 (see `LICENSE-DATA`); the underlying raw JEPX prices are public-domain market data published by the Japan Electric Power Exchange
+- **Code** — [MIT](LICENSE)
+- **Processed dataset** — [CC-BY-4.0](LICENSE-DATA). The underlying raw JEPX prices are public-domain market data published by the Japan Electric Power Exchange.
 
 ## Contact
 
-Ittipon Fongkaew - `ittipon@sut.ac.th` - School of Physics, Institute of Science, Suranaree University of Technology.
+[Ittipon Fongkaew](mailto:ittipon@sut.ac.th) — School of Physics, Institute of Science, Suranaree University of Technology.
